@@ -7,4 +7,20 @@
  * say how many people(cards) are in the zone and who they are.
  */
 
-class Zone {}
+class Zone {
+  public people: Array<Person>
+
+  constructor(
+    private zonename: string,
+    private zonecapacity: number,
+    private zonepeople: number,
+    private zoneprice: number
+  ) {
+    this.zonename = zonename
+    this.zonecapacity = zonecapacity
+    this.zonepeople = zonepeople
+  }
+  public addPerson = (person: Person): void => {
+    this.people.push(person)
+  }
+}
